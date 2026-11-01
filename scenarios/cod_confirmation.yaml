@@ -1,0 +1,177 @@
+# Each scenario is a caller the agent must handle.
+#   expected: outcome the call must end with, plus any value it must capture
+#   voice:    Microsoft neural voice used to synthesise this caller
+#   replies:  what the caller says when the agent is waiting in that state; a list
+#             is spoken in order, repeating the last line if asked again
+# The "readback" state is answered automatically: the caller says `readback_yes`
+# when the agent reads the right pincode and `readback_no` when it does not.
+defaults:
+  readback_yes: "हाँ, सही है"
+  readback_no: "नहीं, गलत है"
+  fallback: "क्या बोला आपने?"
+
+scenarios:
+  # ---- confirm with a pincode, spoken different ways
+  - id: confirm_hindi_digits
+    tags: [confirm, hindi]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: confirmed, pincode: "560001"}
+    replies:
+      confirm_order: "हाँ, ऑर्डर भेज दीजिए"
+      ask_pincode: "पाँच छह शून्य शून्य शून्य एक"
+  - id: confirm_english_digits
+    tags: [confirm, hinglish]
+    voice: en-IN-NeerjaNeural
+    expected: {outcome: confirmed, pincode: "110044"}
+    replies:
+      confirm_order: "Yes, please confirm my order"
+      ask_pincode: "one one zero zero four four"
+  - id: confirm_double_zero
+    tags: [confirm, hinglish, hard_number]
+    voice: en-IN-PrabhatNeural
+    expected: {outcome: confirmed, pincode: "400001"}
+    replies:
+      confirm_order: "Haan ji, bhej do"
+      ask_pincode: "four double zero double zero one"
+  - id: confirm_grouped_number
+    tags: [confirm, hinglish, hard_number]
+    voice: en-IN-NeerjaNeural
+    expected: {outcome: confirmed, pincode: "560034"}
+    replies:
+      confirm_order: "Okay, theek hai"
+      ask_pincode: "five sixty, zero thirty four"
+  - id: confirm_mixed_language_digits
+    tags: [confirm, hinglish, code_switch, hard_number]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: confirmed, pincode: "302017"}
+    replies:
+      confirm_order: "जी हाँ, confirm कर दीजिए"
+      ask_pincode: "तीन zero दो zero one सात"
+  - id: confirm_filler_words
+    tags: [confirm, hindi, hard_number]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: confirmed, pincode: "700091"}
+    replies:
+      confirm_order: "हाँ हाँ, बिल्कुल भेज दीजिए"
+      ask_pincode: "देखिए, मेरा पिनकोड है सात शून्य शून्य, शून्य नौ एक"
+  - id: confirm_devanagari_english_words
+    tags: [confirm, hinglish, code_switch]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: confirmed, pincode: "226010"}
+    replies:
+      confirm_order: "Yes, ठीक है, भेज दो"
+      ask_pincode: "two two six zero one zero"
+  - id: confirm_hindi_male
+    tags: [confirm, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: confirmed, pincode: "208012"}
+    replies:
+      confirm_order: "जी, सही है, भेज दीजिए"
+      ask_pincode: "दो शून्य आठ शून्य एक दो"
+
+  # ---- change the delivery address
+  - id: address_change_hindi
+    tags: [address, hindi]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: address_changed, pincode: "411014"}
+    replies:
+      confirm_order: "मुझे पता बदलना है"
+      ask_pincode: "चार एक एक शून्य एक चार"
+  - id: address_change_hinglish
+    tags: [address, hinglish, code_switch]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: address_changed, pincode: "500081"}
+    replies:
+      confirm_order: "Delivery दूसरे address पर करनी है"
+      ask_pincode: "five zero zero zero eight one"
+  - id: address_change_english
+    tags: [address, hinglish]
+    voice: en-IN-PrabhatNeural
+    expected: {outcome: address_changed, pincode: "600020"}
+    replies:
+      confirm_order: "I want to change my address"
+      ask_pincode: "six zero zero zero two zero"
+
+  # ---- cancel: wrongly delivering here is the costly mistake
+  - id: cancel_hindi
+    tags: [cancel, hindi]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: cancelled}
+    replies:
+      confirm_order: "नहीं, मुझे यह ऑर्डर नहीं चाहिए"
+      confirm_cancel: "जी हाँ, कैंसल कर दीजिए"
+  - id: cancel_hinglish
+    tags: [cancel, hinglish, code_switch]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: cancelled}
+    replies:
+      confirm_order: "Please cancel कर दो, मत भेजो"
+      confirm_cancel: "हाँ, pakka"
+  - id: cancel_english
+    tags: [cancel, hinglish]
+    voice: en-IN-NeerjaNeural
+    expected: {outcome: cancelled}
+    replies:
+      confirm_order: "No, cancel this order"
+      confirm_cancel: "Yes, correct"
+  - id: cancel_angry
+    tags: [cancel, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: cancelled}
+    replies:
+      confirm_order: "मैंने कोई ऑर्डर नहीं किया, वापस ले जाइए"
+      confirm_cancel: "जी, रद्द कर दीजिए, हाँ"
+
+  # ---- traps: the words say one thing and the meaning is another
+  - id: trap_do_not_cancel
+    tags: [trap, hinglish, code_switch]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: confirmed, pincode: "560034"}
+    replies:
+      confirm_order: "नहीं नहीं, cancel मत करो, भेज दो"
+      ask_pincode: "five six zero zero three four"
+  - id: trap_changed_mind
+    tags: [trap, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: confirmed, pincode: "122001"}
+    replies:
+      confirm_order: ["नहीं", "हाँ, भेज दीजिए"]
+      confirm_cancel: "नहीं नहीं, कैंसल नहीं करना"
+      ask_pincode: "एक दो दो शून्य शून्य एक"
+  - id: trap_no_problem
+    tags: [trap, hinglish]
+    voice: en-IN-NeerjaNeural
+    expected: {outcome: confirmed, pincode: "380015"}
+    replies:
+      confirm_order: "No problem, you can send it"
+      ask_pincode: "three eight zero zero one five"
+
+  # ---- reschedule
+  - id: reschedule_tomorrow
+    tags: [reschedule, hindi]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: rescheduled, day: tomorrow}
+    replies:
+      confirm_order: "अभी नहीं, मैं घर पर नहीं हूँ"
+      ask_day: "कल कर दीजिए"
+  - id: reschedule_weekday
+    tags: [reschedule, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: rescheduled, day: monday}
+    replies:
+      confirm_order: "किसी और दिन भेजिए"
+      ask_day: "सोमवार को"
+  - id: reschedule_hinglish
+    tags: [reschedule, hinglish, code_switch]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: rescheduled, day: saturday}
+    replies:
+      confirm_order: "मैं अभी बाहर हूँ, बाद में"
+      ask_day: "Saturday को भेजना"
+  - id: reschedule_day_after
+    tags: [reschedule, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: rescheduled, day: day_after}
+    replies:
+      confirm_order: "बाद में भेज दीजिए"
+      ask_day: "परसों"

@@ -1,0 +1,9 @@
+faster-whisper
+edge-tts
+pyyaml
+numpy
+scipy
+pandas
+matplotlib
+streamlit
+pytest
