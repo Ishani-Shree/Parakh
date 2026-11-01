@@ -28,7 +28,8 @@ MAX_TURNS = 12
 
 def load_scenarios(path: Path) -> list[dict]:
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
-    return [{**data["defaults"], **s} for s in data["scenarios"]]
+    return [{**data["latin_defaults" if s["voice"].startswith("en-") else "defaults"], **s}
+            for s in data["scenarios"]]
 
 
 def caller_line(scenario: dict, turn, asked: dict) -> str:

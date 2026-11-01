@@ -10,6 +10,12 @@ defaults:
   readback_no: "नहीं, गलत है"
   fallback: "क्या बोला आपने?"
 
+# English (en-*) voices cannot reliably read Devanagari, so their callers use these.
+latin_defaults:
+  readback_yes: "Haan, sahi hai"
+  readback_no: "Nahi, galat hai"
+  fallback: "Kya bola aapne?"
+
 scenarios:
   # ---- confirm with a pincode, spoken different ways
   - id: confirm_hindi_digits
