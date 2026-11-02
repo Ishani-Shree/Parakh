@@ -11,8 +11,9 @@ import numpy as np
 
 os.environ.setdefault("HF_HUB_DISABLE_SYMLINKS_WARNING", "1")  # harmless on Windows, just noisy
 
-DOMAIN_HINT = ("COD ऑर्डर की पुष्टि। हाँ, नहीं, cancel, confirm, पिनकोड, address, "
-               "शून्य, एक, दो, तीन, चार, पाँच, छह, सात, आठ, नौ, zero, double, कल, परसों।")
+# A plain sentence about the call's topic. Listing expected answers would make Whisper echo them
+# on unclear audio, which passes tests for the wrong reason.
+DOMAIN_HINT = "फ़ोन पर ग्राहक से ऑनलाइन ऑर्डर की डिलीवरी के बारे में बातचीत।"
 
 
 class Transcriber:

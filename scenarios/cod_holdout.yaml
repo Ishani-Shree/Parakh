@@ -1,0 +1,97 @@
+# Held-out scenarios: written before the Phase 4 agent fix, and never used to tune it.
+# Do not add words from these lines to the agent. If they fail, report it.
+defaults:
+  readback_yes: "जी बिल्कुल, यही है"
+  readback_no: "नहीं जी, यह सही नहीं है"
+  fallback: "एक बार फिर बोलिए"
+
+latin_defaults:
+  readback_yes: "Yes, that is right"
+  readback_no: "No, that is not right"
+  fallback: "Sorry, say that again?"
+
+scenarios:
+  - id: holdout_confirm_polite
+    tags: [confirm, hindi]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: confirmed, pincode: "462001"}
+    replies:
+      confirm_order: "जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए"
+      ask_pincode: "चार छह दो शून्य शून्य एक"
+  - id: holdout_confirm_short
+    tags: [confirm, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: confirmed, pincode: "751024"}
+    replies:
+      confirm_order: "हाँ जी"
+      ask_pincode: "सात पाँच एक शून्य दो चार"
+  - id: holdout_confirm_english
+    tags: [confirm, hinglish]
+    voice: en-IN-NeerjaNeural
+    expected: {outcome: confirmed, pincode: "682030"}
+    replies:
+      confirm_order: "Yes, go ahead and deliver it"
+      ask_pincode: "six eight two zero three zero"
+  - id: holdout_confirm_my_pincode
+    tags: [confirm, hinglish, code_switch]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: confirmed, pincode: "160017"}
+    replies:
+      confirm_order: "हाँ, delivery कर दीजिए"
+      ask_pincode: "मेरा pincode है one six zero zero one seven"
+  - id: holdout_address_moved
+    tags: [address, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: address_changed, pincode: "147001"}
+    replies:
+      confirm_order: "मेरा पता अब बदल गया है"
+      ask_pincode: "एक चार सात शून्य शून्य एक"
+  - id: holdout_address_office
+    tags: [address, hinglish, code_switch]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: address_changed, pincode: "201301"}
+    replies:
+      confirm_order: "Office के address पर भेजना है"
+      ask_pincode: "two zero one three zero one"
+  - id: holdout_cancel_mistake
+    tags: [cancel, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: cancelled}
+    replies:
+      confirm_order: "गलती से ऑर्डर हो गया, कैंसल कर दीजिए"
+      confirm_cancel: "जी हाँ"
+  - id: holdout_cancel_found_cheaper
+    tags: [cancel, hinglish]
+    voice: en-IN-PrabhatNeural
+    expected: {outcome: cancelled}
+    replies:
+      confirm_order: "Cancel it please, I got it cheaper somewhere else"
+      confirm_cancel: "Yes"
+  - id: holdout_cancel_rejected
+    tags: [cancel, hindi]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: cancelled}
+    replies:
+      confirm_order: "मुझे अब यह सामान नहीं चाहिए"
+      confirm_cancel: "हाँ, रद्द कर दो"
+  - id: holdout_trap_keep_order
+    tags: [trap, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: confirmed, pincode: "834001"}
+    replies:
+      confirm_order: "ऑर्डर रद्द मत करना, मुझे चाहिए"
+      ask_pincode: "आठ तीन चार शून्य शून्य एक"
+  - id: holdout_reschedule_next_week
+    tags: [reschedule, hinglish, code_switch]
+    voice: hi-IN-SwaraNeural
+    expected: {outcome: rescheduled, day: sunday}
+    replies:
+      confirm_order: "अभी नहीं ले पाऊँगी, बाद में भेजिए"
+      ask_day: "Sunday को"
+  - id: holdout_reschedule_travelling
+    tags: [reschedule, hindi]
+    voice: hi-IN-MadhurNeural
+    expected: {outcome: rescheduled, day: thursday}
+    replies:
+      confirm_order: "मैं बाहर हूँ, किसी और दिन आइए"
+      ask_day: "गुरुवार को आ जाइए"

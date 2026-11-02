@@ -54,6 +54,12 @@ def test_noise_changes_with_seed():
     assert not np.array_equal(a, b)
 
 
+def test_cached_clip_names_stay_stable_and_depend_on_speed():
+    base = audio._cache_path("हाँ", "hi-IN-SwaraNeural")
+    assert base == audio._cache_path("हाँ", "hi-IN-SwaraNeural", "+0%")
+    assert base != audio._cache_path("हाँ", "hi-IN-SwaraNeural", "-10%")
+
+
 def test_every_voice_and_line_is_collected():
     lines = all_lines(load_scenarios(SCENARIOS))
     assert ("हाँ, भेज दीजिए", "hi-IN-MadhurNeural") in lines  # second entry of a list reply

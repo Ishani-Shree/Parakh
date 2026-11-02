@@ -26,16 +26,21 @@ CONDITIONS = {
 }
 
 
-def _cache_path(text: str, voice: str) -> Path:
-    key = hashlib.sha256(f"{voice}|{text}".encode()).hexdigest()[:20]
-    return CACHE_DIR / f"{key}.mp3"
+# A caller who repeats a line does not produce the same audio twice, so each try is spoken at a
+# different speed. Without this, a retry on clean audio is the identical clip and adds nothing.
+RETRY_RATES = ("+0%", "-10%", "+10%")
 
 
-async def _synthesise_all(items: list[tuple[str, str]], concurrency: int = 4) -> None:
+def _cache_path(text: str, voice: str, rate: str = "+0%") -> Path:
+    key = hashlib.sha256(f"{voice}|{text}".encode() if rate == "+0%" else f"{voice}|{text}|{rate}".encode())
+    return CACHE_DIR / f"{key.hexdigest()[:20]}.mp3"
+
+
+async def _synthesise_all(items: list[tuple[str, str, str]], concurrency: int = 4) -> None:
     gate = asyncio.Semaphore(concurrency)
 
-    async def one(text, voice):
-        path = _cache_path(text, voice)
+    async def one(text, voice, rate):
+        path = _cache_path(text, voice, rate)
         if path.exists():
             return
         # A failed save leaves an empty file behind, so only a finished clip gets the real name.
@@ -43,7 +48,7 @@ async def _synthesise_all(items: list[tuple[str, str]], concurrency: int = 4) ->
         async with gate:
             for attempt in range(4):
                 try:
-                    await edge_tts.Communicate(text, voice).save(str(partial))
+                    await edge_tts.Communicate(text, voice, rate=rate).save(str(partial))
                     partial.replace(path)
                     return
                 except Exception as error:
@@ -51,17 +56,17 @@ async def _synthesise_all(items: list[tuple[str, str]], concurrency: int = 4) ->
                         raise RuntimeError(f"Could not synthesise {text!r} with voice {voice}") from error
                     await asyncio.sleep(2 ** attempt)
 
-    await asyncio.gather(*(one(t, v) for t, v in items))
+    await asyncio.gather(*(one(*item) for item in items))
 
 
-def synthesise_all(items: list[tuple[str, str]]) -> None:
-    """Fetch every (text, voice) pair once; later runs reuse the cached files."""
+def synthesise_all(items: list[tuple[str, str]], rates=RETRY_RATES) -> None:
+    """Fetch every (text, voice) pair at each speed once; later runs reuse the cached files."""
     CACHE_DIR.mkdir(parents=True, exist_ok=True)
-    asyncio.run(_synthesise_all(sorted(set(items))))
+    asyncio.run(_synthesise_all([(t, v, r) for t, v in sorted(set(items)) for r in rates]))
 
 
-def load_speech(text: str, voice: str) -> np.ndarray:
-    return decode_audio(str(_cache_path(text, voice)), sampling_rate=SAMPLE_RATE).astype(np.float32)
+def load_speech(text: str, voice: str, rate: str = "+0%") -> np.ndarray:
+    return decode_audio(str(_cache_path(text, voice, rate)), sampling_rate=SAMPLE_RATE).astype(np.float32)
 
 
 def seed_for(*parts) -> int:

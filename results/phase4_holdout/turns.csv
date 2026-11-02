@@ -1,0 +1,429 @@
+﻿config,condition,seed,scenario,turn,state,agent_said,caller_said,heard,attempt,stt_s,audio_s
+oracle,text,0,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए","जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",0,0.0,0.0
+oracle,text,0,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,चार छह दो शून्य शून्य एक,0,0.0,0.0
+oracle,text,0,holdout_confirm_polite,2,readback,"Aapka pincode 4 6 2 0 0 1 hai, sahi?","जी बिल्कुल, यही है","जी बिल्कुल, यही है",0,0.0,0.0
+oracle,text,0,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,हाँ जी,0,0.0,0.0
+oracle,text,0,holdout_confirm_short,1,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,सात पाँच एक शून्य दो चार,0,0.0,0.0
+oracle,text,0,holdout_confirm_short,2,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है","जी बिल्कुल, यही है",0,0.0,0.0
+oracle,text,0,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","Yes, go ahead and deliver it",0,0.0,0.0
+oracle,text,0,holdout_confirm_english,1,ask_pincode,Delivery ka pincode bataiye.,six eight two zero three zero,six eight two zero three zero,0,0.0,0.0
+oracle,text,0,holdout_confirm_english,2,readback,"Aapka pincode 6 8 2 0 3 0 hai, sahi?","Yes, that is right","Yes, that is right",0,0.0,0.0
+oracle,text,0,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए","हाँ, delivery कर दीजिए",0,0.0,0.0
+oracle,text,0,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा pincode है one six zero zero one seven,0,0.0,0.0
+oracle,text,0,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है","जी बिल्कुल, यही है",0,0.0,0.0
+oracle,text,0,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पता अब बदल गया है,0,0.0,0.0
+oracle,text,0,holdout_address_moved,1,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,एक चार सात शून्य शून्य एक,0,0.0,0.0
+oracle,text,0,holdout_address_moved,2,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है","जी बिल्कुल, यही है",0,0.0,0.0
+oracle,text,0,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,Office के address पर भेजना है,0,0.0,0.0
+oracle,text,0,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,two zero one three zero one,0,0.0,0.0
+oracle,text,0,holdout_address_office,2,readback,"Aapka pincode 2 0 1 3 0 1 hai, sahi?","जी बिल्कुल, यही है","जी बिल्कुल, यही है",0,0.0,0.0
+oracle,text,0,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए","गलती से ऑर्डर हो गया, कैंसल कर दीजिए",0,0.0,0.0
+oracle,text,0,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हाँ,0,0.0,0.0
+oracle,text,0,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else","Cancel it please, I got it cheaper somewhere else",0,0.0,0.0
+oracle,text,0,holdout_cancel_found_cheaper,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,Yes,Yes,0,0.0,0.0
+oracle,text,0,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अब यह सामान नहीं चाहिए,0,0.0,0.0
+oracle,text,0,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो","हाँ, रद्द कर दो",0,0.0,0.0
+oracle,text,0,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए","ऑर्डर रद्द मत करना, मुझे चाहिए",0,0.0,0.0
+oracle,text,0,holdout_trap_keep_order,1,ask_pincode,Delivery ka pincode bataiye.,आठ तीन चार शून्य शून्य एक,आठ तीन चार शून्य शून्य एक,0,0.0,0.0
+oracle,text,0,holdout_trap_keep_order,2,readback,"Aapka pincode 8 3 4 0 0 1 hai, sahi?","जी बिल्कुल, यही है","जी बिल्कुल, यही है",0,0.0,0.0
+oracle,text,0,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए","अभी नहीं ले पाऊँगी, बाद में भेजिए",0,0.0,0.0
+oracle,text,0,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,Sunday को,0,0.0,0.0
+oracle,text,0,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूँ, किसी और दिन आइए",0,0.0,0.0
+oracle,text,0,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरुवार को आ जाइए,0,0.0,0.0
+medium,clean,0,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हां अर्डर मैंने ही किया था बेज दीजे,0,0.469807800000126,4.824
+medium,clean,0,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,4 6 2 0 0 1,0,0.21577309999884164,3.36
+medium,clean,0,holdout_confirm_polite,2,readback,"Aapka pincode 4 6 2 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.34366810000028636,2.736
+medium,clean,0,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,हाजी,0,0.20310080000126618,1.872
+medium,clean,0,holdout_confirm_short,1,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024,0,0.18462460000046121,3.168
+medium,clean,0,holdout_confirm_short,2,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.36224740000034217,3.072
+medium,clean,0,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","Yes, go ahead and deliver it.",0,4.411498600000414,3.24
+medium,clean,0,holdout_confirm_english,1,ask_pincode,Delivery ka pincode bataiye.,six eight two zero three zero,682030,0,0.19824999999946158,3.12
+medium,clean,0,holdout_confirm_english,2,readback,"Aapka pincode 6 8 2 0 3 0 hai, sahi?","Yes, that is right","Yes, that is right.",0,6.132427299999108,2.568
+medium,clean,0,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हां डिलिवरी कर दीजे,0,0.32430269999895245,2.952
+medium,clean,0,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है 160017,0,0.3007258000016009,4.44
+medium,clean,0,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.30824939999911294,2.736
+medium,clean,0,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पता अब बदल गया है।,0,0.3509111999992456,3.456
+medium,clean,0,holdout_address_moved,1,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,147001,0,0.1887762999995175,3.144
+medium,clean,0,holdout_address_moved,2,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.374920000000202,3.072
+medium,clean,0,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,आफिस के अड्रेस पर भेजना हैं।,0,0.39492649999920104,3.024
+medium,clean,0,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,201301,0,0.23038110000015877,3.144
+medium,clean,0,holdout_address_office,2,readback,"Aapka pincode 2 0 1 3 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.3160878999988199,2.736
+medium,clean,0,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए","गल्ती से आवडर हो गया, कैनसल कर दीजिये।",0,0.47946129999945697,4.08
+medium,clean,0,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हां।,0,0.2263132999996742,1.872
+medium,clean,0,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else","Cancell it please, I got it cheaper somewhere else.",0,4.428350899999714,4.44
+medium,clean,0,holdout_cancel_found_cheaper,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else","Cancell it please, I got it cheaper somewhere else.",1,0.2673287999987224,4.944
+medium,clean,0,holdout_cancel_found_cheaper,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else","Cancell it please, I got it cheaper somewhere else.",2,4.919660600000498,4.056
+medium,clean,0,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अभ यहाँ सामान नहीं जाहिए।,0,0.43853129999843077,3.36
+medium,clean,0,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",हा रदित कर दो,0,0.3020851999990555,2.592
+medium,clean,0,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्द मत करना मुझे चाहिये,0,0.3973334000002069,3.456
+medium,clean,0,holdout_trap_keep_order,1,ask_pincode,Delivery ka pincode bataiye.,आठ तीन चार शून्य शून्य एक,834 001,0,0.1961924999995972,3.24
+medium,clean,0,holdout_trap_keep_order,2,readback,"Aapka pincode 8 3 4 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3438507999999274,3.072
+medium,clean,0,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउगी। बाद में भेजिये।,0,0.47218659999998636,3.936
+medium,clean,0,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,संदे को,0,0.2151678999998694,1.944
+medium,clean,0,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.22257669999999052,2.16
+medium,clean,0,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,संदे को।,2,0.25039420000030077,1.872
+medium,clean,0,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूं, किसी और दिन आये।",0,0.3856785000007221,3.504
+medium,clean,0,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाये,0,0.31208150000020396,2.496
+medium,phone,0,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हाँ अर्डर मैंने ही किया था बेज दीजे,0,0.4495387999995728,4.824
+medium,phone,0,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,462001,0,0.18956950000028883,3.36
+medium,phone,0,holdout_confirm_polite,2,readback,"Aapka pincode 4 6 2 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.3038373999988835,2.736
+medium,phone,0,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,हाँ जी,0,0.21227689999977883,1.872
+medium,phone,0,holdout_confirm_short,1,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024,0,0.21185920000061742,3.168
+medium,phone,0,holdout_confirm_short,2,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3122337000004336,3.072
+medium,phone,0,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","Yes, go ahead and deliver it!",0,6.23150220000025,3.24
+medium,phone,0,holdout_confirm_english,1,ask_pincode,Delivery ka pincode bataiye.,six eight two zero three zero,682030,0,0.18667119999918214,3.12
+medium,phone,0,holdout_confirm_english,2,readback,"Aapka pincode 6 8 2 0 3 0 hai, sahi?","Yes, that is right","Yes, that is right.",0,7.699849200000244,2.568
+medium,phone,0,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हां दिलिफी कर दीजिये,0,0.323569199999838,2.952
+medium,phone,0,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है 160017,0,0.30084899999928894,4.44
+medium,phone,0,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.3152429999991,2.736
+medium,phone,0,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पता अब बदल गया हैं,0,0.3396849000000657,3.456
+medium,phone,0,holdout_address_moved,1,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,147001,0,0.2173884999992879,3.144
+medium,phone,0,holdout_address_moved,2,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.32536959999924875,3.072
+medium,phone,0,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,आफिस के अड्रेस पर भेजना है।,0,0.4460195999999996,3.024
+medium,phone,0,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,201301,0,0.19131350000134262,3.144
+medium,phone,0,holdout_address_office,2,readback,"Aapka pincode 2 0 1 3 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.31264049999845156,2.736
+medium,phone,0,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए","गल्ती से आउर्डर हो गया, कैनसल कर दी जीए",0,0.44867820000035863,4.08
+medium,phone,0,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हां!,0,0.22413920000144572,1.872
+medium,phone,0,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else","Cancell it please, I got it cheaper somewhere else.",0,6.666201099998943,4.44
+medium,phone,0,holdout_cancel_found_cheaper,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else","तान्सल इत प्लीस, आई गोतिट चीपर सम्वेर एल्फु",1,0.5433019000010972,4.944
+medium,phone,0,holdout_cancel_found_cheaper,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else","तान्सल इत प्लीस, एगाट इत चीपर् सम्वेर एल्फु",2,0.5266802000005555,4.056
+medium,phone,0,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अभ यहाँ सामान नहीं चाहें।,0,0.41683460000058403,3.36
+medium,phone,0,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",हाँ रज़ कर दो,0,0.3027541999999812,2.592
+medium,phone,0,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अडर वर्द मत करना मुझे चाहिये,0,0.3987563999999111,3.456
+medium,phone,0,holdout_trap_keep_order,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अदर वर्द मत करना मुझे चाहिये।,1,0.44352249999974447,3.84
+medium,phone,0,holdout_trap_keep_order,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अवर्दर रद्द मत करना मुझे चाहिये,2,0.42473750000135624,3.144
+medium,phone,0,holdout_trap_keep_order,3,ask_pincode,Delivery ka pincode bataiye.,आठ तीन चार शून्य शून्य एक,834 001,0,0.21047530000032566,3.24
+medium,phone,0,holdout_trap_keep_order,4,readback,"Aapka pincode 8 3 4 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.32346270000016375,3.072
+medium,phone,0,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउगी. बाद में भेजिये.,0,0.47209859999929904,3.936
+medium,phone,0,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,संदे को,0,0.2237195999987307,1.944
+medium,phone,0,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.211123500001122,2.16
+medium,phone,0,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,संदे को,2,0.22331469999880937,1.872
+medium,phone,0,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूं, किसी और दिन आये.",0,0.38075889999890933,3.504
+medium,phone,0,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाये,0,0.3094120000005205,2.496
+medium,phone,1,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हाँ अर्डर मैंने ही किया था बेज दीजे,0,0.45667189999949187,4.824
+medium,phone,1,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,462001,0,0.19168160000117496,3.36
+medium,phone,1,holdout_confirm_polite,2,readback,"Aapka pincode 4 6 2 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.31091600000036124,2.736
+medium,phone,1,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,हाँ जी,0,0.2226472999991529,1.872
+medium,phone,1,holdout_confirm_short,1,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024,0,0.19219479999992473,3.168
+medium,phone,1,holdout_confirm_short,2,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.32305450000058045,3.072
+medium,phone,1,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","Yes, go ahead and deliver it.",0,4.279015899999649,3.24
+medium,phone,1,holdout_confirm_english,1,ask_pincode,Delivery ka pincode bataiye.,six eight two zero three zero,682030,0,0.18655480000052194,3.12
+medium,phone,1,holdout_confirm_english,2,readback,"Aapka pincode 6 8 2 0 3 0 hai, sahi?","Yes, that is right","Yes, that is right!",0,6.174134099999719,2.568
+medium,phone,1,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हां दिलिफी कर दीजिये,0,0.3207470999986981,2.952
+medium,phone,1,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है 160017,0,0.31830079999963345,4.44
+medium,phone,1,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.3215502999992168,2.736
+medium,phone,1,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पता अब बदल गया हैं,0,0.3447500000002037,3.456
+medium,phone,1,holdout_address_moved,1,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,147001,0,0.2386528000006365,3.144
+medium,phone,1,holdout_address_moved,2,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.31299609999950917,3.072
+medium,phone,1,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,आफिस के अड्रेस पर भेजना है।,0,0.3854955000006157,3.024
+medium,phone,1,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,201301,0,0.1868177000014839,3.144
+medium,phone,1,holdout_address_office,2,readback,"Aapka pincode 2 0 1 3 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.3086329999987356,2.736
+medium,phone,1,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए","गल्ती से आउर्डर हो गया, कैनसल कर दी जीए",0,0.46656110000003537,4.08
+medium,phone,1,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हां!,0,0.21453929999916,1.872
+medium,phone,1,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else",तान्सल इत प्लीस। आई गोतिट चीपर सम्वेर एल्फ।,0,2.729575899998963,4.44
+medium,phone,1,holdout_cancel_found_cheaper,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else","तान्सल इत प्लीस, आई गोतिट चीपर सम्वेर एल्फु",1,0.5717564999995375,4.944
+medium,phone,1,holdout_cancel_found_cheaper,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else","तान्सल इत प्लीस, एगाट इत चीपर् सम्वेर एल्फु",2,0.5544997999986663,4.056
+medium,phone,1,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अभ यहाँ सामान नहीं चाहें।,0,0.43933909999941534,3.36
+medium,phone,1,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",हाँ रज़ कर दो,0,0.2824251000001823,2.592
+medium,phone,1,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अडर वर्द मत करना मुझे चाहिये,0,0.3998658999989857,3.456
+medium,phone,1,holdout_trap_keep_order,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अदर वर्द मत करना मुझे चाहिये।,1,0.42229520000000775,3.84
+medium,phone,1,holdout_trap_keep_order,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अवर्दर रद्द मत करना मुझे चाहिये,2,0.4272104000010586,3.144
+medium,phone,1,holdout_trap_keep_order,3,ask_pincode,Delivery ka pincode bataiye.,आठ तीन चार शून्य शून्य एक,834 001,0,0.20256250000056752,3.24
+medium,phone,1,holdout_trap_keep_order,4,readback,"Aapka pincode 8 3 4 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3334558999995352,3.072
+medium,phone,1,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउगी. बाद में भेजिये.,0,0.46969410000019707,3.936
+medium,phone,1,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,संदे को,0,0.2235010999993392,1.944
+medium,phone,1,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.22284339999896474,2.16
+medium,phone,1,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,संदे को,2,0.21780219999891415,1.872
+medium,phone,1,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूं, किसी और दिन आये.",0,0.3906771000001754,3.504
+medium,phone,1,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाये,0,0.3224259999988135,2.496
+medium,phone,2,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हाँ अर्डर मैंने ही किया था बेज दीजे,0,0.4766753999992943,4.824
+medium,phone,2,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,462001,0,0.19677530000080878,3.36
+medium,phone,2,holdout_confirm_polite,2,readback,"Aapka pincode 4 6 2 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.3247054000003118,2.736
+medium,phone,2,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,हाँ जी,0,0.23777069999960077,1.872
+medium,phone,2,holdout_confirm_short,1,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024,0,0.19278839999969932,3.168
+medium,phone,2,holdout_confirm_short,2,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.32946609999999055,3.072
+medium,phone,2,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","Yes, go ahead and deliver it.",0,4.637676100001045,3.24
+medium,phone,2,holdout_confirm_english,1,ask_pincode,Delivery ka pincode bataiye.,six eight two zero three zero,682030,0,0.18967150000025867,3.12
+medium,phone,2,holdout_confirm_english,2,readback,"Aapka pincode 6 8 2 0 3 0 hai, sahi?","Yes, that is right","Yes, that is right.",0,6.216341600000305,2.568
+medium,phone,2,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हां दिलिफी कर दीजिये,0,0.32077939999908267,2.952
+medium,phone,2,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है 160017,0,0.32923309999932826,4.44
+medium,phone,2,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.32247170000118786,2.736
+medium,phone,2,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पता अब बदल गया हैं,0,0.3548988000002282,3.456
+medium,phone,2,holdout_address_moved,1,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,147001,0,0.20370829999956186,3.144
+medium,phone,2,holdout_address_moved,2,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3530719999998837,3.072
+medium,phone,2,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,आफिस के अड्रेस पर भेजना है।,0,0.44603450000067824,3.024
+medium,phone,2,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,201301,0,0.20965290000094683,3.144
+medium,phone,2,holdout_address_office,2,readback,"Aapka pincode 2 0 1 3 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.31035270000029413,2.736
+medium,phone,2,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए","गल्ती से आउर्डर हो गया, कैनसल कर दी जीए",0,0.4686509000002843,4.08
+medium,phone,2,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हां!,0,0.2194208000000799,1.872
+medium,phone,2,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else",Cancel it please. I got it cheaper somewhere else.,0,7.0681071000017255,4.44
+medium,phone,2,holdout_cancel_found_cheaper,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,Yes,Yes.,0,0.1822558999992907,1.872
+medium,phone,2,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अभ यहाँ सामान नहीं चाहें।,0,0.4344431000008626,3.36
+medium,phone,2,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",हाँ रज़ कर दो,0,0.2763599999998405,2.592
+medium,phone,2,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अडर वर्द मत करना मुझे चाहिये,0,0.4101467999989836,3.456
+medium,phone,2,holdout_trap_keep_order,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अदर वर्द मत करना मुझे चाहिये।,1,0.4073123999987729,3.84
+medium,phone,2,holdout_trap_keep_order,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अवर्दर रद्द मत करना मुझे चाहिये,2,0.43449039999904926,3.144
+medium,phone,2,holdout_trap_keep_order,3,ask_pincode,Delivery ka pincode bataiye.,आठ तीन चार शून्य शून्य एक,834 001,0,0.19687580000027083,3.24
+medium,phone,2,holdout_trap_keep_order,4,readback,"Aapka pincode 8 3 4 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3240431999984139,3.072
+medium,phone,2,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउगी. बाद में भेजिये.,0,0.4836766999997053,3.936
+medium,phone,2,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,संदे को,0,0.22043649999977788,1.944
+medium,phone,2,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.2137771999987308,2.16
+medium,phone,2,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,संदे को,2,0.21822529999917606,1.872
+medium,phone,2,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूं, किसी और दिन आये.",0,0.37801089999993565,3.504
+medium,phone,2,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाये,0,0.3277273999992758,2.496
+medium,phone_street_10db,0,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हां अर्डर मैंने ही किया था बेज दीजे,0,0.4721501999993052,4.824
+medium,phone_street_10db,0,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,462001,0,0.18970140000055835,3.36
+medium,phone_street_10db,0,holdout_confirm_polite,2,readback,"Aapka pincode 4 6 2 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं!,0,0.3231976000006398,2.736
+medium,phone_street_10db,0,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,हाजी,0,0.20617009999841684,1.872
+medium,phone_street_10db,0,holdout_confirm_short,1,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024,0,0.18870939999942493,3.168
+medium,phone_street_10db,0,holdout_confirm_short,2,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.33898520000002463,3.072
+medium,phone_street_10db,0,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","ये, गो अएद्ड़ और दिलिवर इत।",0,0.4297509000007267,3.24
+medium,phone_street_10db,0,holdout_confirm_english,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","ये, गो अएद और दिलिवरेट।",1,0.3903368999999657,3.6
+medium,phone_street_10db,0,holdout_confirm_english,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","ये, गो अएट और दिलिवर रेट।",2,0.40751210000053106,2.952
+medium,phone_street_10db,0,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हां दिलिव्री कर दीजीए,0,0.3433107000000746,2.952
+medium,phone_street_10db,0,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है 160017,0,0.2989527999998245,4.44
+medium,phone_street_10db,0,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3379848000004131,2.736
+medium,phone_street_10db,0,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पता अब बदल गया हैं।,0,0.38244959999974526,3.456
+medium,phone_street_10db,0,holdout_address_moved,1,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,147001,0,0.19810580000012123,3.144
+medium,phone_street_10db,0,holdout_address_moved,2,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3530171000002156,3.072
+medium,phone_street_10db,0,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,आफिस के अड्रेस पर भेजना है।,0,0.4015237999992678,3.024
+medium,phone_street_10db,0,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,तु जीरो वं तुी जीरो वं,0,0.3638205999995989,3.144
+medium,phone_street_10db,0,holdout_address_office,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,two zero one three zero one,तु जीरो वं ती जीरो वं,1,0.3486500999988493,3.48
+medium,phone_street_10db,0,holdout_address_office,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,two zero one three zero one,दू जीडो एइ जीडो एइ,2,0.3439200000011624,2.856
+medium,phone_street_10db,0,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए","गल्ती से आउर्डर हो गया, कैनसल कर दी जीए",0,0.46927510000023176,4.08
+medium,phone_street_10db,0,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हाँ।,0,0.23649360000126762,1.872
+medium,phone_street_10db,0,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else","तान्सल इत प्लीस, एक लिए परादिया परादिया यह एक लिए परादिया।",0,0.7040559999986726,4.44
+medium,phone_street_10db,0,holdout_cancel_found_cheaper,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else",काणसल इतपीस। यह काफकर शामना यह और आपको चाट।,1,9.146397399999842,4.944
+medium,phone_street_10db,0,holdout_cancel_found_cheaper,2,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,Yes,Yes,0,0.17986110000128974,1.872
+medium,phone_street_10db,0,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अब यहाँ सामान नहीं चाहें।,0,0.4406349999990198,3.36
+medium,phone_street_10db,0,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",हाँ रज़ कर दो,0,0.3242100000006758,2.592
+medium,phone_street_10db,0,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्दमत करना मुझे चाहिये।,0,0.4435066000005463,3.456
+medium,phone_street_10db,0,holdout_trap_keep_order,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्दमत करना मुझे चाहिये।,1,0.41288450000138255,3.84
+medium,phone_street_10db,0,holdout_trap_keep_order,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्दमत करना मुझे चाहिये।,2,0.4763605000007374,3.144
+medium,phone_street_10db,0,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउगी। बाद में भेजिये।,0,0.4998314999993454,3.936
+medium,phone_street_10db,0,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,सांडे पो,0,0.23810229999980947,1.944
+medium,phone_street_10db,0,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.2331835000004503,2.16
+medium,phone_street_10db,0,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,सांडे पो,2,0.2364633999986836,1.872
+medium,phone_street_10db,0,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूं, किसी और दिन आये।",0,0.40368109999872104,3.504
+medium,phone_street_10db,0,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाये।,0,0.34702160000051663,2.496
+medium,phone_street_10db,1,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हां अर्डर मैंने ही किया था बेज दीजे,0,0.46569649999946705,4.824
+medium,phone_street_10db,1,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,462001,0,0.19104780000088795,3.36
+medium,phone_street_10db,1,holdout_confirm_polite,2,readback,"Aapka pincode 4 6 2 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3613389999991341,2.736
+medium,phone_street_10db,1,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,हाजी,0,0.20133100000020931,1.872
+medium,phone_street_10db,1,holdout_confirm_short,1,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024,0,0.1945408999999927,3.168
+medium,phone_street_10db,1,holdout_confirm_short,2,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3298419999991893,3.072
+medium,phone_street_10db,1,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","ये, गो अएद्द और दिलिवर रिट्व।",0,0.454432700000325,3.24
+medium,phone_street_10db,1,holdout_confirm_english,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","ये, गो अएद और दिलिवरेट।",1,0.383650800000396,3.6
+medium,phone_street_10db,1,holdout_confirm_english,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","ये, गो अएद्ट और दिलिवर रिप।",2,0.43318250000083935,2.952
+medium,phone_street_10db,1,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हां दिलिव्री कर दीजिये,0,0.36985859999913373,2.952
+medium,phone_street_10db,1,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है वज्टिक्स जीरो जीरो वज्टिक्स,0,0.5367820999999822,4.44
+medium,phone_street_10db,1,holdout_confirm_my_pincode,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है 160017,1,0.30947870000090916,4.92
+medium,phone_street_10db,1,holdout_confirm_my_pincode,3,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.334187500000553,2.736
+medium,phone_street_10db,1,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पता अब बदल गया है।,0,0.3718487999994977,3.456
+medium,phone_street_10db,1,holdout_address_moved,1,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,147001,0,0.18913430000066,3.144
+medium,phone_street_10db,1,holdout_address_moved,2,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3318072000001848,3.072
+medium,phone_street_10db,1,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,आफिस के अड्रेस पर भेजना है।,0,0.41208540000116045,3.024
+medium,phone_street_10db,1,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,201301,0,0.1930224999996426,3.144
+medium,phone_street_10db,1,holdout_address_office,2,readback,"Aapka pincode 2 0 1 3 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं!,0,0.33509520000006887,2.736
+medium,phone_street_10db,1,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए","गल्ती से आउर्डर हो गया, कैनसल कर दी जीए",0,0.47803120000025956,4.08
+medium,phone_street_10db,1,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हाँ।,0,0.2414442000008421,1.872
+medium,phone_street_10db,1,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else","तान्सल इत प्लीस, एक लिए परादिया परादिया परादिया यह लिए परादिया।",0,0.7290118000000803,4.44
+medium,phone_street_10db,1,holdout_cancel_found_cheaper,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else",जाज़ा इत प्लेज। मैं पर कोई जाज़ा एक लिए जाज़ा रहा था।,1,5.238260200001605,4.944
+medium,phone_street_10db,1,holdout_cancel_found_cheaper,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else",तान्सल इत प्लीस। एगाट इत चीपर शुब्वेर एल्फ।,2,0.6107829000011407,4.056
+medium,phone_street_10db,1,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अब यहाँ सामान नहीं जाहें।,0,0.43767379999917466,3.36
+medium,phone_street_10db,1,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",हाँ रदित कर दो,0,0.2847993999985192,2.592
+medium,phone_street_10db,1,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्दमत करना मुझे चाहिये।,0,0.42982800000027055,3.456
+medium,phone_street_10db,1,holdout_trap_keep_order,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्दमक करना मुझे चाहिये।,1,0.41856189999998605,3.84
+medium,phone_street_10db,1,holdout_trap_keep_order,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्दमत करना मुझे चाहिये।,2,0.4551387999999861,3.144
+medium,phone_street_10db,1,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउगी। बाद में भेजिये।,0,0.5055976000003284,3.936
+medium,phone_street_10db,1,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,संदे को।,0,0.2427809000000707,1.944
+medium,phone_street_10db,1,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.2704217999998946,2.16
+medium,phone_street_10db,1,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,संदे को,2,0.22086599999965983,1.872
+medium,phone_street_10db,1,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूं, किसी और दिन आये।",0,0.3997997000005853,3.504
+medium,phone_street_10db,1,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाये।,0,0.335786100000405,2.496
+medium,phone_street_10db,2,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हां अर्डर मैंने ही किया था बेज दीजे,0,0.465528999999151,4.824
+medium,phone_street_10db,2,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,462001,0,0.18682280000030005,3.36
+medium,phone_street_10db,2,holdout_confirm_polite,2,readback,"Aapka pincode 4 6 2 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.32844959999965795,2.736
+medium,phone_street_10db,2,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,आजी,0,0.19934640000064974,1.872
+medium,phone_street_10db,2,holdout_confirm_short,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?",हाँ जी,हाँ जी,1,0.2210610000001907,1.872
+medium,phone_street_10db,2,holdout_confirm_short,2,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024,0,0.19199230000049283,3.168
+medium,phone_street_10db,2,holdout_confirm_short,3,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3381377000005159,3.072
+medium,phone_street_10db,2,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","ये, गो अएद्द और दिलिवर रेट।",0,0.439297599999918,3.24
+medium,phone_street_10db,2,holdout_confirm_english,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","ये, गो अएद और दिलिवर एट।",1,0.5316877000004752,3.6
+medium,phone_street_10db,2,holdout_confirm_english,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","ये, गो अएद्ट और दिलिवर रेट।",2,0.43149040000025707,2.952
+medium,phone_street_10db,2,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हां दिलिफ्री कर दीजीए,0,0.3499742000003607,2.952
+medium,phone_street_10db,2,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है 160017,0,0.368962400001692,4.44
+medium,phone_street_10db,2,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.32303870000032475,2.736
+medium,phone_street_10db,2,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पता अब बदल गया है।,0,0.36542999999983294,3.456
+medium,phone_street_10db,2,holdout_address_moved,1,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,147001,0,0.18759250000039174,3.144
+medium,phone_street_10db,2,holdout_address_moved,2,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3463849999989179,3.072
+medium,phone_street_10db,2,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,आफिस के अड्रेस पर भेजना है।,0,0.408782099999371,3.024
+medium,phone_street_10db,2,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,तु जीरो वं तुी जीरो वं,0,0.3718217999994522,3.144
+medium,phone_street_10db,2,holdout_address_office,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,two zero one three zero one,तु जीरो वं तुी जीरो वं,1,0.3888929000004282,3.48
+medium,phone_street_10db,2,holdout_address_office,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,two zero one three zero one,तु जीडो एउट्री जीडो एउट्री,2,0.42986199999904784,2.856
+medium,phone_street_10db,2,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए",गल्टी से आउर्डर हो गया। कैनसल कर दीजी।,0,0.5345297000003484,4.08
+medium,phone_street_10db,2,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हाँ।,0,0.23530829999981506,1.872
+medium,phone_street_10db,2,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else","तान्सल इत प्लीस, एक लिए परादिया परादिया परादिया यह लिए परादिया।",0,0.7351337000000058,4.44
+medium,phone_street_10db,2,holdout_cancel_found_cheaper,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else",तंसल इत प्लीस। आई गोतिट चीपर सम्वेर ऐस्ट।,1,5.032569999999396,4.944
+medium,phone_street_10db,2,holdout_cancel_found_cheaper,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else",तान्सल इत प्लीस। एगाट इत चीपर शम्वेर एल्ड।,2,0.6168925000001764,4.056
+medium,phone_street_10db,2,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अब यहाँ सामान नहीं चाहिए।,0,0.4695040999995399,3.36
+medium,phone_street_10db,2,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",हा रज़ कर दो,0,0.2950674000003346,2.592
+medium,phone_street_10db,2,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्दमत करना मुझे चाहिये।,0,0.44232149999879766,3.456
+medium,phone_street_10db,2,holdout_trap_keep_order,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद्दमत करना मुझे चाहिये।,1,0.44922959999894374,3.84
+medium,phone_street_10db,2,holdout_trap_keep_order,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अवर्डर रद्द मत करना मुझे चाहिये।,2,0.48200100000030943,3.144
+medium,phone_street_10db,2,holdout_trap_keep_order,3,ask_pincode,Delivery ka pincode bataiye.,आठ तीन चार शून्य शून्य एक,834 0001,0,0.21961319999900297,3.24
+medium,phone_street_10db,2,holdout_trap_keep_order,4,ask_pincode,Pincode ke chhah ank dobara bataiye.,आठ तीन चार शून्य शून्य एक,834 001,1,0.20112750000043889,3.6
+medium,phone_street_10db,2,holdout_trap_keep_order,5,readback,"Aapka pincode 8 3 4 0 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.34593019999920216,3.072
+medium,phone_street_10db,2,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अब ही नहीं ले पाउँगी। बाग में भीजिये।,0,0.5365237999994861,3.936
+medium,phone_street_10db,2,holdout_reschedule_next_week,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,एक बार फिर बोलिए,एक बार फिर बोलिये।,0,0.3417102999992494,2.496
+medium,phone_street_10db,2,holdout_reschedule_next_week,2,confirm_cancel,"Haan ya nahi, order cancel karein?",एक बार फिर बोलिए,एक बार फिर बोलिये।,1,0.33396670000001905,2.76
+medium,phone_street_10db,2,holdout_reschedule_next_week,3,confirm_cancel,"Haan ya nahi, order cancel karein?",एक बार फिर बोलिए,एक बार फिर बोलिये।,2,0.3284454000004189,2.256
+medium,phone_street_10db,2,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूं, किसी और दिन आये।",0,0.43371529999967606,3.504
+medium,phone_street_10db,2,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाये।,0,0.35778620000019146,2.496
+medium,phone_crowd_5db,0,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हां और्डर मैंने इसी क्या था हूं वेज दीजे,0,0.5398948000001837,4.824
+medium,phone_crowd_5db,0,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,जार्च्याइ दो शुन्ये शुन्ये एगे,0,0.46052419999978156,3.36
+medium,phone_crowd_5db,0,holdout_confirm_polite,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,चार छह दो शून्य शून्य एक,जार्च्याइ दो शुन्ये शुन्ये एक खाजान देखो गुवाण,1,0.6511826000005385,3.72
+medium,phone_crowd_5db,0,holdout_confirm_polite,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,चार छह दो शून्य शून्य एक,जाज है डो शुर्णे शुर्णे एक,2,0.43904250000014144,3.048
+medium,phone_crowd_5db,0,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,आजी बहुत आजी जी,0,0.34964709999985644,1.872
+medium,phone_crowd_5db,0,holdout_confirm_short,1,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024 मुझे चाहिये,0,0.3030352000005223,3.168
+medium,phone_crowd_5db,0,holdout_confirm_short,2,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",विल्कुल यही है।,0,0.3045846999993955,3.072
+medium,phone_crowd_5db,0,holdout_confirm_short,3,readback,Pincode 7 5 1 0 2 4 sahi hai?,"जी बिल्कुल, यही है",जी बिल्कुल यही है हम।,1,0.3486135999992257,3.408
+medium,phone_crowd_5db,0,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","ये, जा अपने पर दिड़ाएगे पर दिड़ाएगे",0,0.5818385000002309,3.24
+medium,phone_crowd_5db,0,holdout_confirm_english,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","ये, जा अपने लिए पराइपूँगा पर लिए पराइपूँगा.",1,1.180952000000616,3.6
+medium,phone_crowd_5db,0,holdout_confirm_english,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","Yes, go ahead and deliver it.",2,3.4824848999996902,2.952
+medium,phone_crowd_5db,0,holdout_confirm_english,3,ask_pincode,Delivery ka pincode bataiye.,six eight two zero three zero,682030,0,0.24283309999918856,3.12
+medium,phone_crowd_5db,0,holdout_confirm_english,4,readback,"Aapka pincode 6 8 2 0 3 0 hai, sahi?","Yes, that is right","ये, यह रहा है।",0,0.31092589999934717,2.568
+medium,phone_crowd_5db,0,holdout_confirm_english,5,readback,Pincode 6 8 2 0 3 0 sahi hai?,"Yes, that is right",येजू यह रहे है।,1,0.34294410000075004,2.856
+medium,phone_crowd_5db,0,holdout_confirm_english,6,readback,Pincode 6 8 2 0 3 0 sahi hai?,"Yes, that is right","ये, यह रहा है।",2,0.2982558000003337,2.352
+medium,phone_crowd_5db,0,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",आप दिनवी कर दीजियों।,0,0.5164921000014147,2.952
+medium,phone_crowd_5db,0,holdout_confirm_my_pincode,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","हाँ, delivery कर दीजिए",आप दिलिब्री कर दीजे।,1,0.38505780000014056,3.288
+medium,phone_crowd_5db,0,holdout_confirm_my_pincode,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","हाँ, delivery कर दीजिए",हाँ दिनभी कर दीए।,2,0.345762900000409,2.688
+medium,phone_crowd_5db,0,holdout_confirm_my_pincode,3,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिन्कोड है ले 160017,0,7.045381900001303,4.44
+medium,phone_crowd_5db,0,holdout_confirm_my_pincode,4,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3447353999999905,2.736
+medium,phone_crowd_5db,0,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पड़ा अब बदल गया है।,0,0.38919259999966016,3.456
+medium,phone_crowd_5db,0,holdout_address_moved,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?",मेरा पता अब बदल गया है,मेरा बता अब बदल गया है।,1,0.3719330000003538,3.816
+medium,phone_crowd_5db,0,holdout_address_moved,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?",मेरा पता अब बदल गया है,मेरा बता अब बदल बया है।,2,0.3861749999996391,3.144
+medium,phone_crowd_5db,0,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,अफिज के एड्रेज पर भीजना है।,0,0.4496730999999272,3.024
+medium,phone_crowd_5db,0,holdout_address_office,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?",Office के address पर भेजना है,अफिस के अड्रेस पर भेखना हैं।,1,0.47537130000091565,3.36
+medium,phone_crowd_5db,0,holdout_address_office,2,ask_pincode,Naya pincode bataiye.,two zero one three zero one,201301,0,9.279609100000016,3.144
+medium,phone_crowd_5db,0,holdout_address_office,3,readback,"Aapka pincode 2 0 1 3 0 1 hai, sahi?","जी बिल्कुल, यही है",इसी बिल्कुल यही है।,0,0.33380600000054983,2.736
+medium,phone_crowd_5db,0,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए",गल्टी से आउर्डर हो गया। कैंट्रल कर जी जी।,0,0.5668929000003118,4.08
+medium,phone_crowd_5db,0,holdout_cancel_mistake,1,ask_pincode,Delivery ka pincode bataiye.,एक बार फिर बोलिए,एब बार फिर बोली हैं।,0,0.3337365999996109,2.496
+medium,phone_crowd_5db,0,holdout_cancel_mistake,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,एक बार फिर बोलिए,एक बार फिर गोलीए।,1,0.34292769999956363,2.76
+medium,phone_crowd_5db,0,holdout_cancel_mistake,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,एक बार फिर बोलिए,एक बार फिर बोलिये।,2,0.35642730000108713,2.28
+medium,phone_crowd_5db,0,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else","तांसल इट लीज, आई गोट इक चीपर शम्वेर है रोजाइजा.",0,0.6347442000005685,4.44
+medium,phone_crowd_5db,0,holdout_cancel_found_cheaper,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else",,1,8.808128299999225,4.944
+medium,phone_crowd_5db,0,holdout_cancel_found_cheaper,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else",तान्सल इत लीज। आई गोटिट चीपर शम्वेर एप लिए पूलीज।,2,0.7051009999995586,4.056
+medium,phone_crowd_5db,0,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अब यहाँ सामान नहीं जाही है।,0,0.4694505000006757,3.36
+medium,phone_crowd_5db,0,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",आप रज कर दो,0,2.363219400000162,2.592
+medium,phone_crowd_5db,0,holdout_cancel_rejected,2,confirm_cancel,"Haan ya nahi, order cancel karein?","हाँ, रद्द कर दो",रद कर दो,1,0.22667079999882844,2.856
+medium,phone_crowd_5db,0,holdout_cancel_rejected,3,confirm_cancel,"Haan ya nahi, order cancel karein?","हाँ, रद्द कर दो",आप रज कर दे पाँवुवूंग।,2,0.42382050000014715,2.352
+medium,phone_crowd_5db,0,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए","और्डर रद्दमत करना, मुझे चाहिए!",0,0.438298199998826,3.456
+medium,phone_crowd_5db,0,holdout_trap_keep_order,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अवर्डर रद मत करना मुझे चाहीं।,1,0.44253419999949983,3.84
+medium,phone_crowd_5db,0,holdout_trap_keep_order,2,ask_pincode,Delivery ka pincode bataiye.,आठ तीन चार शून्य शून्य एक,आज चीन तार शुनी शुनी केगी हां,0,8.809427099999084,3.24
+medium,phone_crowd_5db,0,holdout_trap_keep_order,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,आठ तीन चार शून्य शून्य एक,आट तीम चार्थ शुनी शुनी एट।,1,0.4227979999996023,3.6
+medium,phone_crowd_5db,0,holdout_trap_keep_order,4,ask_pincode,Pincode ke chhah ank dobara bataiye.,आठ तीन चार शून्य शून्य एक,अट दीन चाच ने शुने एक।,2,0.37874100000044564,2.952
+medium,phone_crowd_5db,0,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउँगी। बाद में भेजिये ही।,0,0.5350687999998627,3.936
+medium,phone_crowd_5db,0,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,तंदे इको।,0,0.27364850000049046,1.944
+medium,phone_crowd_5db,0,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.23081319999982952,2.16
+medium,phone_crowd_5db,0,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,जान्दे यकूप।,2,0.30770490000031714,1.872
+medium,phone_crowd_5db,0,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए",मैं बाहर हूए इसी और दिल आये हैं।,0,0.43676849999974365,3.504
+medium,phone_crowd_5db,0,holdout_reschedule_travelling,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","मैं बाहर हूँ, किसी और दिन आइए","मैं बाहर हूं, इसी और देन पाईएं।",1,0.446454699998867,3.888
+medium,phone_crowd_5db,0,holdout_reschedule_travelling,2,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,बुरूवार को आजायेव करना आजेव,0,0.45154829999955837,2.496
+medium,phone_crowd_5db,0,holdout_reschedule_travelling,3,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,बुरुवान को आजायें!,1,0.3651946999998472,2.76
+medium,phone_crowd_5db,0,holdout_reschedule_travelling,4,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाइए मइकर्णा,2,0.4297513000001345,2.256
+medium,phone_crowd_5db,1,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हाँ अर्जर मैंने ही किया था रेज दीजे,0,0.49210020000100485,4.824
+medium,phone_crowd_5db,1,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,चान्च्याइदोजुन्येजुन्येएइइ,0,0.4718281000004936,3.36
+medium,phone_crowd_5db,1,holdout_confirm_polite,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,चार छह दो शून्य शून्य एक,जान्ट्है तू शुन्या शुन्या एक,1,0.4314075000002049,3.72
+medium,phone_crowd_5db,1,holdout_confirm_polite,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,चार छह दो शून्य शून्य एक,चाँच है दो शुने शुने एक।,2,0.4012524999998277,3.048
+medium,phone_crowd_5db,1,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,यहाँ भी नहीं रहा है।,0,0.3386006999990059,1.872
+medium,phone_crowd_5db,1,holdout_confirm_short,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,एक बार फिर बोलिए,एक बार फिर बोले हैं।,0,0.32770929999969667,2.496
+medium,phone_crowd_5db,1,holdout_confirm_short,2,confirm_cancel,"Haan ya nahi, order cancel karein?",एक बार फिर बोलिए,एक बार फिर बोले!,1,0.2929359999998269,2.76
+medium,phone_crowd_5db,1,holdout_confirm_short,3,confirm_cancel,"Haan ya nahi, order cancel karein?",एक बार फिर बोलिए,एक बार फिर बोली है।,2,0.32120799999938754,2.28
+medium,phone_crowd_5db,1,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","यह, जा अपने लिए पाइए पर लिए पाइए।",0,0.5028239000002941,3.24
+medium,phone_crowd_5db,1,holdout_confirm_english,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","यह, जा अपने लिबरेश करें!",1,0.3779664000012417,3.6
+medium,phone_crowd_5db,1,holdout_confirm_english,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","Yes, go ahead and deliver it.",2,0.9692231999997603,2.952
+medium,phone_crowd_5db,1,holdout_confirm_english,3,ask_pincode,Delivery ka pincode bataiye.,six eight two zero three zero,682030,0,0.1889203999999154,3.12
+medium,phone_crowd_5db,1,holdout_confirm_english,4,readback,"Aapka pincode 6 8 2 0 3 0 hai, sahi?","Yes, that is right","ये, यह रहा है।",0,0.6236735000002227,2.568
+medium,phone_crowd_5db,1,holdout_confirm_english,5,readback,Pincode 6 8 2 0 3 0 sahi hai?,"Yes, that is right","ये, यह रहा है।",1,0.28803159999915806,2.856
+medium,phone_crowd_5db,1,holdout_confirm_english,6,readback,Pincode 6 8 2 0 3 0 sahi hai?,"Yes, that is right","Yes, that is right.",2,7.073704200000066,2.352
+medium,phone_crowd_5db,1,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हाँ जिनिफ्री कर दीजिए।,0,0.368162000000666,2.952
+medium,phone_crowd_5db,1,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,मेरा पिंकोड है 160017,0,8.685801399999036,4.44
+medium,phone_crowd_5db,1,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुन यही हैं।,0,0.34020520000012766,2.736
+medium,phone_crowd_5db,1,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पटा अब बदल गया है।,0,0.3799122999989777,3.456
+medium,phone_crowd_5db,1,holdout_address_moved,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?",मेरा पता अब बदल गया है,मेरा पता अब बदल गया है।,1,0.35513019999962125,3.816
+medium,phone_crowd_5db,1,holdout_address_moved,2,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,एक चाथ साथ सुने सुने एक जाएए,0,0.4128504000000248,3.144
+medium,phone_crowd_5db,1,holdout_address_moved,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,एक चार सात शून्य शून्य एक,एक चाथ साथ सुनी सुनी एक प्राज़ूए।,1,0.47331600000143226,3.48
+medium,phone_crowd_5db,1,holdout_address_moved,4,ask_pincode,Pincode ke chhah ank dobara bataiye.,एक चार सात शून्य शून्य एक,एक जाद जाद सुने सुने एक।,2,0.3867785999991611,2.856
+medium,phone_crowd_5db,1,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,अफिज के अड्रेस पर भिटना है।,0,0.43996399999923597,3.024
+medium,phone_crowd_5db,1,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,2 0 1 3 0 1,0,10.929654199999277,3.144
+medium,phone_crowd_5db,1,holdout_address_office,2,readback,"Aapka pincode 2 0 1 3 0 1 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुई यही है।,0,0.3293155999999726,2.736
+medium,phone_crowd_5db,1,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए",गल्टी से आउडर हो गया। कैनसल कर दीजीए!,0,0.49612250000063796,4.08
+medium,phone_crowd_5db,1,holdout_cancel_mistake,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जिन्हाँ।,0,2.225462599999446,1.872
+medium,phone_crowd_5db,1,holdout_cancel_mistake,2,confirm_cancel,"Haan ya nahi, order cancel karein?",जी हाँ,जी हाँ।,1,0.23533630000019912,1.968
+medium,phone_crowd_5db,1,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else",तान्सल इत प्लीस। आई गौट इत चीपर शम्वेर एजी हाँ रहे है।,0,0.61911820000023,4.44
+medium,phone_crowd_5db,1,holdout_cancel_found_cheaper,1,ask_pincode,Delivery ka pincode bataiye.,"Sorry, say that again?","Sorry, we'll save that again.",0,3.007176500001151,2.544
+medium,phone_crowd_5db,1,holdout_cancel_found_cheaper,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,"Sorry, say that again?",तोरी देदाक अगें,1,0.30310260000078415,2.832
+medium,phone_crowd_5db,1,holdout_cancel_found_cheaper,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,"Sorry, say that again?","Sorry, I say that again.",2,6.993869800000539,2.328
+medium,phone_crowd_5db,1,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अभ यहां सामान नहीं चाहिए।,0,0.443232599998737,3.36
+medium,phone_crowd_5db,1,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",आपका रद कर दो,0,0.29633800000010524,2.592
+medium,phone_crowd_5db,1,holdout_cancel_rejected,2,confirm_cancel,"Haan ya nahi, order cancel karein?","हाँ, रद्द कर दो",आप रदिज कर दो,1,0.2898014000002149,2.856
+medium,phone_crowd_5db,1,holdout_cancel_rejected,3,confirm_cancel,"Haan ya nahi, order cancel karein?","हाँ, रद्द कर दो",आप रज कर देए।,2,0.3123500999990938,2.352
+medium,phone_crowd_5db,1,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अदर ब्रत्द मक दरना मुझे चाहिए।,0,0.4488794999997481,3.456
+medium,phone_crowd_5db,1,holdout_trap_keep_order,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","ऑर्डर रद्द मत करना, मुझे चाहिए",अर्डर रद नद करूणा है। मुझे चाहिए।,1,6.602758300001369,3.84
+medium,phone_crowd_5db,1,holdout_trap_keep_order,2,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,एक बार फिर बोलिए,एक बार फिर बोलीए।,0,0.3247537999995984,2.496
+medium,phone_crowd_5db,1,holdout_trap_keep_order,3,confirm_cancel,"Haan ya nahi, order cancel karein?",एक बार फिर बोलिए,एक बार फिर बोलीए।,1,0.3212363999991794,2.76
+medium,phone_crowd_5db,1,holdout_trap_keep_order,4,confirm_cancel,"Haan ya nahi, order cancel karein?",एक बार फिर बोलिए,एक बार फिर बोली हैं।,2,0.36936579999928654,2.28
+medium,phone_crowd_5db,1,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउगी। बाद में भेजी।,0,0.530595500000345,3.936
+medium,phone_crowd_5db,1,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,अपने लिए शान्दे को।,0,0.359507000001031,1.944
+medium,phone_crowd_5db,1,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.24386330000015732,2.16
+medium,phone_crowd_5db,1,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,संदे को,2,0.23294440000063332,1.872
+medium,phone_crowd_5db,1,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए",मैं बाहर हूं इस एउर पिनाए ये चादल गया हैं।,0,0.5386392000000342,3.504
+medium,phone_crowd_5db,1,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,बुरूबार को आजाएए!,0,0.44643510000059905,2.496
+medium,phone_crowd_5db,1,holdout_reschedule_travelling,2,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आजाई पताओ बदल करें।,1,0.4711907999990217,2.76
+medium,phone_crowd_5db,2,holdout_confirm_polite,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"जी हाँ, ऑर्डर मैंने ही किया था, भेज दीजिए",जी हाँ अर्दर मैंने इस्था था बेश दीजीएं,0,0.5744033000009949,4.824
+medium,phone_crowd_5db,2,holdout_confirm_polite,1,ask_pincode,Delivery ka pincode bataiye.,चार छह दो शून्य शून्य एक,जाद है डो शुन्ये शुन्ये एक,0,0.4159208999990369,3.36
+medium,phone_crowd_5db,2,holdout_confirm_polite,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,चार छह दो शून्य शून्य एक,जाज चैदों शुन्ये शुन्ये एप,1,0.432369899999685,3.72
+medium,phone_crowd_5db,2,holdout_confirm_polite,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,चार छह दो शून्य शून्य एक,जार्च्यार्दों शुन्ये शुन्ये एक।,2,0.48756329999923764,3.048
+medium,phone_crowd_5db,2,holdout_confirm_short,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,हाँ जी,आजी!,0,0.21264809999956924,1.872
+medium,phone_crowd_5db,2,holdout_confirm_short,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?",हाँ जी,हाजी,1,0.206890100000237,1.872
+medium,phone_crowd_5db,2,holdout_confirm_short,2,ask_pincode,Delivery ka pincode bataiye.,सात पाँच एक शून्य दो चार,751024,0,0.20627319999948668,3.168
+medium,phone_crowd_5db,2,holdout_confirm_short,3,readback,"Aapka pincode 7 5 1 0 2 4 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही हैं।,0,0.3792448999993212,3.072
+medium,phone_crowd_5db,2,holdout_confirm_english,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Yes, go ahead and deliver it","ये, जाज और दिलिबरेट रहे हैं।",0,0.44192800000018906,3.24
+medium,phone_crowd_5db,2,holdout_confirm_english,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","यह, पर अभी पाइज पर लिए पाइज पर लिए पाइज पाइज पाइज.",1,1.2981700000000274,3.6
+medium,phone_crowd_5db,2,holdout_confirm_english,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Yes, go ahead and deliver it","Yes, go ahead and deliver it.",2,0.9451994000010018,2.952
+medium,phone_crowd_5db,2,holdout_confirm_english,3,ask_pincode,Delivery ka pincode bataiye.,six eight two zero three zero,682030,0,0.1919730999998137,3.12
+medium,phone_crowd_5db,2,holdout_confirm_english,4,readback,"Aapka pincode 6 8 2 0 3 0 hai, sahi?","Yes, that is right","ये, यह रहा है।",0,0.2868259999995644,2.568
+medium,phone_crowd_5db,2,holdout_confirm_english,5,readback,Pincode 6 8 2 0 3 0 sahi hai?,"Yes, that is right","ये, यह रहा है।",1,0.2938948999999411,2.856
+medium,phone_crowd_5db,2,holdout_confirm_english,6,readback,Pincode 6 8 2 0 3 0 sahi hai?,"Yes, that is right","Yes, that is right!",2,7.86131960000057,2.352
+medium,phone_crowd_5db,2,holdout_confirm_my_pincode,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"हाँ, delivery कर दीजिए",हाँ दिलिफी कर दी जे,0,0.33120989999952144,2.952
+medium,phone_crowd_5db,2,holdout_confirm_my_pincode,1,ask_pincode,Delivery ka pincode bataiye.,मेरा pincode है one six zero zero one seven,में पिन्कोड है 160017,0,0.3068018000012671,4.44
+medium,phone_crowd_5db,2,holdout_confirm_my_pincode,2,readback,"Aapka pincode 1 6 0 0 1 7 hai, sahi?","जी बिल्कुल, यही है",जी बिल्कुल यही है।,0,0.3128024000016012,2.736
+medium,phone_crowd_5db,2,holdout_address_moved,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मेरा पता अब बदल गया है,मेरा पटा अब बदल गया है।,0,0.41075110000019777,3.456
+medium,phone_crowd_5db,2,holdout_address_moved,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?",मेरा पता अब बदल गया है,मेरा पता अब बदल गया हैं।,1,0.3646461999996973,3.816
+medium,phone_crowd_5db,2,holdout_address_moved,2,ask_pincode,Naya pincode bataiye.,एक चार सात शून्य शून्य एक,147001,0,0.18822139999974752,3.144
+medium,phone_crowd_5db,2,holdout_address_moved,3,readback,"Aapka pincode 1 4 7 0 0 1 hai, sahi?","जी बिल्कुल, यही है",ये दाइ भिल्कुल यही है।,0,0.36624660000052245,3.072
+medium,phone_crowd_5db,2,holdout_address_office,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,Office के address पर भेजना है,अफिस के अड्रेस पर भेजना है।,0,0.3916912999993656,3.024
+medium,phone_crowd_5db,2,holdout_address_office,1,ask_pincode,Naya pincode bataiye.,two zero one three zero one,तु जीरो वान ती रो वान।,0,0.3923510000004171,3.144
+medium,phone_crowd_5db,2,holdout_address_office,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,two zero one three zero one,तु जीडो वान ती जीडो वान दिनिद रूपी,1,0.51600690000123,3.48
+medium,phone_crowd_5db,2,holdout_address_office,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,two zero one three zero one,दू जीडो वाईट्री जीडो वाईट्री,2,0.4640044999996462,2.856
+medium,phone_crowd_5db,2,holdout_cancel_mistake,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"गलती से ऑर्डर हो गया, कैंसल कर दीजिए",गल्टी से आउर्डर हो गया। यानसल कर दीजी।,0,0.5366700000013225,4.08
+medium,phone_crowd_5db,2,holdout_cancel_mistake,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","गलती से ऑर्डर हो गया, कैंसल कर दीजिए",गल्पी से आदर हो गए हैं। कैन्सल कर देजीए।,1,0.5282169000001886,4.536
+medium,phone_crowd_5db,2,holdout_cancel_mistake,2,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,जी हाँ,जी हाँ।,0,0.23740940000061528,1.872
+medium,phone_crowd_5db,2,holdout_cancel_found_cheaper,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"Cancel it please, I got it cheaper somewhere else",,0,7.301186700000471,4.44
+medium,phone_crowd_5db,2,holdout_cancel_found_cheaper,1,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else","तान्सल इतलीस, वाई गौट इत चीपर शम्वेर एन्ट।",1,0.56666309999855,4.944
+medium,phone_crowd_5db,2,holdout_cancel_found_cheaper,2,confirm_order,"Maaf kijiye, kya aapka order bhej dein?","Cancel it please, I got it cheaper somewhere else","चांसर इटलीद, आइ गोर्तिट चीपर शम्वर एडी हैं।",2,7.555099199998949,4.056
+medium,phone_crowd_5db,2,holdout_cancel_rejected,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,मुझे अब यह सामान नहीं चाहिए,मुझे अभ यहाँ सामान नहीं जाहें,0,0.4228443000010884,3.36
+medium,phone_crowd_5db,2,holdout_cancel_rejected,1,confirm_cancel,Kya aap pakka order cancel karna chahte hain?,"हाँ, रद्द कर दो",आपको लग रज कर लोग।,0,0.34690989999944577,2.592
+medium,phone_crowd_5db,2,holdout_cancel_rejected,2,confirm_cancel,"Haan ya nahi, order cancel karein?","हाँ, रद्द कर दो",आप रज कर दो,1,0.29511510000156704,2.856
+medium,phone_crowd_5db,2,holdout_cancel_rejected,3,confirm_cancel,"Haan ya nahi, order cancel karein?","हाँ, रद्द कर दो",आप रद कर दो रहे हैं।,2,4.273581599998579,2.352
+medium,phone_crowd_5db,2,holdout_trap_keep_order,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"ऑर्डर रद्द मत करना, मुझे चाहिए",अडर रद मत करना मुझे चाहिए।,0,0.42558330000065325,3.456
+medium,phone_crowd_5db,2,holdout_trap_keep_order,1,ask_pincode,Delivery ka pincode bataiye.,आठ तीन चार शून्य शून्य एक,आप तीम चार शूनी शूनी के लिए करेंगे।,0,0.4736695999999938,3.24
+medium,phone_crowd_5db,2,holdout_trap_keep_order,2,ask_pincode,Pincode ke chhah ank dobara bataiye.,आठ तीन चार शून्य शून्य एक,आट तीन चार शुनी शुनी एक यहाँ हैं।,1,0.47063689999959024,3.6
+medium,phone_crowd_5db,2,holdout_trap_keep_order,3,ask_pincode,Pincode ke chhah ank dobara bataiye.,आठ तीन चार शून्य शून्य एक,आट तीन जाथ शुनी शुनी एगा,2,4.368346900000688,2.952
+medium,phone_crowd_5db,2,holdout_reschedule_next_week,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"अभी नहीं ले पाऊँगी, बाद में भेजिए",अभी नहीं ले पाउगी। बाद में भीजी।,0,0.4815182000002096,3.936
+medium,phone_crowd_5db,2,holdout_reschedule_next_week,1,ask_day,Kis din delivery karein?,Sunday को,सथे को,0,0.2086611000013363,1.944
+medium,phone_crowd_5db,2,holdout_reschedule_next_week,2,ask_day,Kis din delivery karein?,Sunday को,संदे को,1,0.2590063999996346,2.16
+medium,phone_crowd_5db,2,holdout_reschedule_next_week,3,ask_day,Kis din delivery karein?,Sunday को,संदे को,2,0.22302709999894432,1.872
+medium,phone_crowd_5db,2,holdout_reschedule_travelling,0,confirm_order,Namaste! Aapka COD order confirm karna hai?,"मैं बाहर हूँ, किसी और दिन आइए",मैं बाहर हूं इती और दिन आये।,0,0.40341280000029656,3.504
+medium,phone_crowd_5db,2,holdout_reschedule_travelling,1,ask_day,Kis din delivery karein?,गुरुवार को आ जाइए,गुरूवार को आ जाये,0,0.3128995000006398,2.496

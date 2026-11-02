@@ -23,10 +23,11 @@ import yaml
 from scipy.io import wavfile
 
 from .agent import RuleBasedCODAgent
+from .normalize import similarity
 
 ROOT = Path(__file__).resolve().parent.parent
-RESULTS = ROOT / "results"
 MAX_TURNS = 12
+CLOSE_MATCH = 0.7
 
 
 def load_scenarios(path: Path) -> list[dict]:
@@ -72,16 +73,21 @@ def score(scenario: dict, result) -> tuple[bool, str]:
 
 
 def run_call(scenario: dict, hear) -> dict:
-    """Play one call. `hear(line, turn_index)` returns (transcript, stt_seconds, audio_seconds)."""
+    """Play one call. `hear(line, turn_index, attempt)` returns (transcript, stt_seconds, audio_seconds).
+
+    `attempt` counts how many times this caller has already said this line.
+    """
     agent = RuleBasedCODAgent()
     turn = agent.start()
-    asked, turns = {}, []
+    asked, tries, turns = {}, {}, []
     index = 0
     while turn is not None and index < MAX_TURNS:
         line = caller_line(scenario, turn, asked)
-        transcript, stt_s, audio_s = hear(line, index)
+        attempt = tries.get(line, 0)
+        tries[line] = attempt + 1
+        transcript, stt_s, audio_s = hear(line, index, attempt)
         turns.append({"turn": index, "state": turn.state, "agent_said": turn.say, "caller_said": line,
-                      "heard": transcript, "stt_s": stt_s, "audio_s": audio_s})
+                      "heard": transcript, "attempt": attempt, "stt_s": stt_s, "audio_s": audio_s})
         turn = agent.reply(transcript)
         index += 1
     passed, verdict = score(scenario, agent.result)
@@ -89,8 +95,19 @@ def run_call(scenario: dict, hear) -> dict:
             "pincode": agent.result.pincode, "day": agent.result.day, "turns": turns}
 
 
-def oracle_hear(line, _index):
+def oracle_hear(line, _index, _attempt):
     return line, 0.0, 0.0
+
+
+def failure_cause(call: dict, oracle_ok: bool) -> str:
+    """Why a call failed. Based on the last turn; a transcript in a different script from the
+    caller's line counts as far, so this is a guide and not an exact split."""
+    if call["passed"]:
+        return ""
+    if not oracle_ok:
+        return "agent_bug"
+    last = call["turns"][-1]
+    return "close_but_rejected" if similarity(last["caller_said"], last["heard"]) >= CLOSE_MATCH else "misheard"
 
 
 def keep_system_awake() -> None:
@@ -108,21 +125,26 @@ def main():
     ap.add_argument("--seeds", type=int, default=3, help="noise seeds per scenario")
     ap.add_argument("--device", default="cuda", choices=["cuda", "cpu"])
     ap.add_argument("--oracle-only", action="store_true")
+    ap.add_argument("--out", default=str(ROOT / "results"), help="folder for this run's results")
+    ap.add_argument("--same-retries", action="store_true",
+                    help="repeat the identical clip on retries, to measure what varying them changes")
     args = ap.parse_args()
 
     scenarios = load_scenarios(Path(args.scenarios))
-    RESULTS.mkdir(exist_ok=True)
+    RESULTS = Path(args.out)
+    RESULTS.mkdir(parents=True, exist_ok=True)
     calls, turns = [], []
+    oracle_passed = {}
 
     def record(config, condition, seed, scenario, call):
         calls.append({"config": config, "condition": condition, "seed": seed, "scenario": scenario["id"],
                       "tags": ",".join(scenario.get("tags", [])), "passed": call["passed"],
                       "verdict": call["verdict"], "outcome": call["outcome"],
-                      "expected_outcome": scenario["expected"]["outcome"], "turns": len(call["turns"])})
+                      "expected_outcome": scenario["expected"]["outcome"], "turns": len(call["turns"]),
+                      "cause": failure_cause(call, oracle_passed.get(scenario["id"], True))})
         turns.extend({"config": config, "condition": condition, "seed": seed, "scenario": scenario["id"], **t}
                      for t in call["turns"])
 
-    oracle_passed = {}
     for s in scenarios:
         call = run_call(s, oracle_hear)
         oracle_passed[s["id"]] = call["passed"]
@@ -134,8 +156,6 @@ def main():
 
     def save():
         calls_df = pd.DataFrame(calls)
-        calls_df["oracle_passed"] = calls_df["scenario"].map(oracle_passed)
-        calls_df["cause"] = np.where(calls_df["passed"], "", np.where(calls_df["oracle_passed"], "speech", "agent"))
         calls_df.to_csv(RESULTS / "calls.csv", index=False, encoding="utf-8-sig")
         pd.DataFrame(turns).to_csv(RESULTS / "turns.csv", index=False, encoding="utf-8-sig")
         return len(calls_df)
@@ -146,8 +166,9 @@ def main():
 
         args.conditions = args.conditions or list(audio_lib.CONDITIONS)
         print("Synthesising caller audio...")
-        audio_lib.synthesise_all(all_lines(scenarios))
-        pool = [audio_lib.load_speech(t, v) for t, v in sorted(set(all_lines(scenarios)))]
+        rates = audio_lib.RETRY_RATES[:1] if args.same_retries else audio_lib.RETRY_RATES
+        audio_lib.synthesise_all(all_lines(scenarios), rates)
+        speech_by_line = {(t, v): audio_lib.load_speech(t, v) for t, v in set(all_lines(scenarios))}
 
         from .stt import Transcriber
         fail_dir = RESULTS / "failures"
@@ -163,9 +184,13 @@ def main():
                 for seed in range(seeds):
                     for s in scenarios:
                         clips = {}
+                        own_lines = {line for line, _ in all_lines([s])}
+                        # The background crowd must not contain the words this caller is saying.
+                        pool = [clip for (t, _), clip in sorted(speech_by_line.items(), key=lambda kv: kv[0])
+                                if t not in own_lines]
 
-                        def hear(line, index):
-                            speech = audio_lib.load_speech(line, s["voice"])
+                        def hear(line, index, attempt):
+                            speech = audio_lib.load_speech(line, s["voice"], rates[attempt % len(rates)])
                             noisy = audio_lib.degrade(
                                 speech, condition, audio_lib.seed_for(s["id"], index, condition, seed), pool)
                             clips[index] = noisy

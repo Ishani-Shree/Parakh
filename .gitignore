@@ -3,5 +3,5 @@ __pycache__/
 *.pyc
 .pytest_cache/
 cache/
-results/failures/
+results/**/failures/
 .streamlit/secrets.toml

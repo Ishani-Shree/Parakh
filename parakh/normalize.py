@@ -4,6 +4,7 @@ Speech-to-text may return the same words in Devanagari, Latin script or as
 numerals, so every lookup here covers all three.
 """
 
+import difflib
 import re
 import unicodedata
 
@@ -29,29 +30,43 @@ TENS = {
 REPEATERS = {"double": 2, "डबल": 2, "triple": 3, "ट्रिपल": 3}
 
 
-def _nfc(text: str) -> str:
-    return unicodedata.normalize("NFC", text)
+# Devanagari sounds that speech-to-text spells interchangeably. दीजिये/दीजिए, भेज/बेज and
+# नहीं/नही should all match, so words are compared in this reduced spelling.
+FOLD = str.maketrans({
+    "ख": "क", "घ": "ग", "छ": "च", "झ": "ज", "ठ": "ट", "ढ": "ड", "थ": "त", "ध": "द", "फ": "प", "भ": "ब",
+    "ण": "न", "श": "स", "ष": "स", "ी": "ि", "ू": "ु", "ई": "इ", "ऊ": "उ", "ो": "ु", "ॉ": "ा", "ऑ": "आ",
+    "ं": None, "ँ": None, "़": None, "्": None, "ः": None,
+})
 
 
-# Transcripts are NFC-normalised before lookup, so the tables must be too.
-UNITS = {_nfc(k): v for k, v in UNITS.items()}
-TENS = {_nfc(k): v for k, v in TENS.items()}
-REPEATERS = {_nfc(k): v for k, v in REPEATERS.items()}
+def fold(text: str) -> str:
+    """Reduce Devanagari to a sound-alike spelling. Latin text passes through unchanged."""
+    text = unicodedata.normalize("NFD", text).replace("िये", "िए").replace("ीये", "िए")
+    return text.translate(FOLD)
 
-CANCEL = ("cancel", "कैंसल", "कैन्सल", "रद्द", "nahi chahiye", "नहीं चाहिए", "नही चाहिए",
+
+# Transcripts are folded before lookup, so the tables must be too.
+UNITS = {fold(k): v for k, v in UNITS.items()}
+TENS = {fold(k): v for k, v in TENS.items()}
+REPEATERS = {fold(k): v for k, v in REPEATERS.items()}
+
+# Devanagari spellings of English words vary a lot, so the common forms are listed.
+CANCEL = ("cancel", "कैंसल", "कैन्सल", "कानसल", "कान्सल", "रद्द", "रद", "nahi chahiye", "नहीं चाहिए", "नही चाहिए",
           "mat bhejo", "मत भेजो", "मत भेजिए", "wapas", "वापस")
 # "cancel mat karo" means the opposite of cancel, so it is checked first.
 # Callers mix scripts mid-phrase, so "cancel मत" needs its own entry.
 NEGATED_CANCEL = ("cancel mat", "cancel nahi", "cancel मत", "cancel नहीं", "कैंसल मत", "कैंसल नहीं",
-                  "कैन्सल मत", "कैन्सल नहीं", "रद्द मत", "रद्द नहीं")
+                  "कैन्सल मत", "कैन्सल नहीं", "कानसल मत", "कानसल नहीं", "कान्सल मत", "कान्सल नहीं",
+                  "रद्द मत", "रद्द नहीं", "रद मत", "रद नहीं")
 # These contain "no"/"नहीं" but mean "that's fine".
 NO_OBJECTION = ("no problem", "नो प्रॉब्लम", "koi baat nahi", "कोई बात नहीं", "koi dikkat nahi", "कोई दिक्कत नहीं")
 RESCHEDULE = ("baad mein", "बाद में", "kisi aur din", "किसी और दिन", "reschedule", "रीशेड्यूल",
               "abhi nahi", "अभी नहीं", "ghar par nahi", "घर पर नहीं", "bahar hoon", "बाहर हूं", "बाहर हूँ")
-ADDRESS = ("address", "एड्रेस", "पता", "pata badal", "pincode badal", "पिनकोड बदल", "dusre", "दूसरे")
+ADDRESS = ("address", "एड्रेस", "अड्रेस", "पता", "pata badal", "pincode badal", "पिनकोड बदल", "dusre", "दूसरे")
 NO = ("nahi", "nahin", "नहीं", "नही", "no", "नो", "galat", "गलत", "wrong", "रॉन्ग")
-YES = ("haan", "han", "हाँ", "हां", "yes", "यस", "ji", "जी", "sahi", "सही", "theek", "ठीक", "ok", "okay",
-       "ओके", "confirm", "कन्फर्म", "bhej do", "भेज दो", "भेज दीजिए", "correct", "करेक्ट", "bilkul", "बिल्कुल")
+YES = ("haan", "han", "हाँ", "हां", "हा", "हाजी", "yes", "यस", "येस", "ji", "जी", "sahi", "सही", "theek", "ठीक",
+       "ok", "okay", "ओके", "confirm", "कन्फर्म", "bhej do", "भेज दो", "भेज दीजिए", "correct", "करेक्ट",
+       "bilkul", "बिल्कुल")
 
 DAYS = {
     "today": ("aaj", "आज", "today", "टुडे"),
@@ -68,8 +83,8 @@ DAYS = {
 
 
 def clean(text: str) -> str:
-    """Lower-case, normalise Unicode and map Devanagari numerals to ASCII, keeping word order."""
-    text = unicodedata.normalize("NFC", text).lower()
+    """Lower-case, fold spellings and map Devanagari numerals to ASCII, keeping word order."""
+    text = fold(text.lower())
     # The danda (Hindi full stop) falls inside the Devanagari block but is punctuation.
     text = text.replace("।", " ").replace("॥", " ")
     text = "".join(str(unicodedata.digit(c)) if c.isdigit() else c for c in text)
@@ -79,7 +94,7 @@ def clean(text: str) -> str:
 
 def _has(text: str, phrases) -> bool:
     """Whole-word phrase match, so "no" does not match inside "know"."""
-    return any(re.search(rf"(?<![\wऀ-ॿ]){re.escape(_nfc(p))}(?![\wऀ-ॿ])", text)
+    return any(re.search(rf"(?<![\wऀ-ॿ]){re.escape(fold(p))}(?![\wऀ-ॿ])", text)
                for p in phrases)
 
 
@@ -111,6 +126,11 @@ def extract_digits(text: str) -> str:
         out.append(digits[0] * repeat + digits[1:] if repeat > 1 else digits)
         repeat = 1
     return "".join(out)
+
+
+def similarity(said: str, heard: str) -> float:
+    """How close two lines are in folded spelling, from 0 to 1."""
+    return difflib.SequenceMatcher(None, clean(said), clean(heard)).ratio()
 
 
 def detect_intent(text: str) -> str | None:
