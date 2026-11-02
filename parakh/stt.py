@@ -28,8 +28,14 @@ class Transcriber:
         name, _, flag = config.partition("+")
         self.hint = DOMAIN_HINT if flag == "hint" else None
         compute = "float16" if device == "cuda" else "int8"
-        self.model = WhisperModel(name, device=device, compute_type=compute)
-        self.transcribe(np.zeros(16000, dtype=np.float32))  # the first call is slow; keep it out of the results
+        try:
+            self.model = WhisperModel(name, device=device, compute_type=compute)
+            self.transcribe(np.zeros(16000, dtype=np.float32))  # the first call is slow; keep it out of the results
+        except RuntimeError as error:
+            if "cublas" in str(error).lower():
+                raise SystemExit("GPU libraries not found. Follow 'GPU setup' in the README, "
+                                 "or run on the CPU with --device cpu.") from error
+            raise
 
     def transcribe(self, audio: np.ndarray) -> tuple[str, float]:
         """Return (text, seconds). beam_size=1 because a live call cannot wait for a wider search."""

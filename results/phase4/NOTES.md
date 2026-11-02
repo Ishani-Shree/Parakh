@@ -43,6 +43,11 @@ agent fix, but crowd-noise and retry changes were not isolated one at a time.
 The new hint scored lower than no hint in every condition, and its words appeared in 24 of 794
 transcripts. It should not be used.
 
+`tiny` still scores higher on street noise (14 of 66, or 21%) than on clean audio (2 of 22, or 9%), even with
+varied retries. It now falls under crowd noise, as expected, but the rise from clean to street remains unexplained.
+The note in `results/NOTES.md` that retries likely explain this is at best a partial answer. `tiny` passes so few
+calls that a few calls change the picture.
+
 ## Safety
 
 No wrong actions in 1,220 calls with the new agent. Looser matching did not make it confirm or cancel
@@ -55,7 +60,7 @@ of the main run:
 
 | Setup | Median | p95 | Max |
 |---|---|---|---|
-| tiny | 0.27 s | 1.8 s | 2.9 s |
+| tiny | 0.26 s | 1.8 s | 2.9 s |
 | small | 0.16 s | 5.2 s | 10.9 s |
 | medium | 0.33 s | 8.9 s | 12.8 s |
 
