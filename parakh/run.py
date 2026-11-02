@@ -11,6 +11,9 @@ fails with the oracle too, the agent itself is at fault.
 """
 
 import argparse
+import ctypes
+import shutil
+import sys
 import time
 from pathlib import Path
 
@@ -90,6 +93,13 @@ def oracle_hear(line, _index):
     return line, 0.0, 0.0
 
 
+def keep_system_awake() -> None:
+    """Stop Windows sleeping during a long run; it froze one run for 9 hours. Ends with the process."""
+    if sys.platform == "win32":
+        ES_CONTINUOUS, ES_SYSTEM_REQUIRED = 0x80000000, 0x00000001
+        ctypes.windll.kernel32.SetThreadExecutionState(ES_CONTINUOUS | ES_SYSTEM_REQUIRED)
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--scenarios", default=str(ROOT / "scenarios" / "cod_confirmation.yaml"))
@@ -122,7 +132,16 @@ def main():
         if not ok:
             print(f"  agent bug, no audio involved: {sid}")
 
+    def save():
+        calls_df = pd.DataFrame(calls)
+        calls_df["oracle_passed"] = calls_df["scenario"].map(oracle_passed)
+        calls_df["cause"] = np.where(calls_df["passed"], "", np.where(calls_df["oracle_passed"], "speech", "agent"))
+        calls_df.to_csv(RESULTS / "calls.csv", index=False, encoding="utf-8-sig")
+        pd.DataFrame(turns).to_csv(RESULTS / "turns.csv", index=False, encoding="utf-8-sig")
+        return len(calls_df)
+
     if not args.oracle_only:
+        keep_system_awake()
         from . import audio as audio_lib  # heavy and needs network access; the oracle run does not
 
         args.conditions = args.conditions or list(audio_lib.CONDITIONS)
@@ -132,7 +151,8 @@ def main():
 
         from .stt import Transcriber
         fail_dir = RESULTS / "failures"
-        fail_dir.mkdir(exist_ok=True)
+        shutil.rmtree(fail_dir, ignore_errors=True)  # clips from an earlier run would not match this one
+        fail_dir.mkdir()
         for config in args.models:
             print(f"\nLoading {config}...")
             stt = Transcriber(config, args.device)
@@ -162,14 +182,10 @@ def main():
                                 wavfile.write(fail_dir / name, audio_lib.SAMPLE_RATE,
                                               (np.clip(clip, -1, 1) * 32767).astype(np.int16))
                 print(f"  {condition:20s} {passed:3d}/{total:<3d} passed  ({time.perf_counter() - t0:.0f}s)")
+                save()  # a crash or shutdown late in a long run keeps everything finished so far
             del stt
 
-    calls_df = pd.DataFrame(calls)
-    calls_df["oracle_passed"] = calls_df["scenario"].map(oracle_passed)
-    calls_df["cause"] = np.where(calls_df["passed"], "", np.where(calls_df["oracle_passed"], "speech", "agent"))
-    calls_df.to_csv(RESULTS / "calls.csv", index=False, encoding="utf-8-sig")
-    pd.DataFrame(turns).to_csv(RESULTS / "turns.csv", index=False, encoding="utf-8-sig")
-    print(f"\nSaved {len(calls_df)} calls to {RESULTS}")
+    print(f"\nSaved {save()} calls to {RESULTS}")
 
 
 if __name__ == "__main__":
